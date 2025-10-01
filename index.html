@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hok AI - Ultra Advanced</title>
+  <style>
+    :root {
+      --gradient: linear-gradient(135deg, #7f00ff, #e100ff);
+      --ai-bubble: rgba(255,255,255,0.7);
+      --user-bubble: rgba(127,0,255,0.9);
+      --radius: 16px;
+    }
+    body { margin:0; font-family: "Nunito", sans-serif; display:flex; flex-direction:column; height:100vh; background:#f4f4f9;}
+    header { background:var(--gradient); color:white; text-align:center; padding:1rem; border-bottom-left-radius:var(--radius); border-bottom-right-radius:var(--radius);}
+    header h1 { margin:0; font-size:1.5rem; }
+    main { flex:1; padding:1rem; display:flex; flex-direction:column; gap:0.5rem; overflow-y:auto;}
+    .msg { padding:0.8rem 1rem; border-radius:var(--radius); max-width:70%; animation:fade 0.3s ease; }
+    .ai { align-self:flex-start; background:var(--ai-bubble); backdrop-filter:blur(10px);}
+    .user { align-self:flex-end; background:var(--user-bubble); color:white;}
+    @keyframes fade { from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:translateY(0);} }
+    .input-box { display:flex; padding:0.5rem; border-top:1px solid #ddd;}
+    #input { flex:1; padding:0.6rem; border-radius:var(--radius); border:1px solid #aaa;}
+    #send { margin-left:0.5rem; padding:0 1.2rem; border:none; border-radius:var(--radius); background:var(--gradient); color:white; cursor:pointer;}
+  </style>
+</head>
+<body>
+  <header><h1>🤖 Hok AI</h1></header>
+  <main id="chat"></main>
+  <div class="input-box">
+    <input id="input" placeholder="Tulis pesan..." />
+    <button id="send">➤</button>
+  </div>
+  <script src="logic.js"></script>
+</body>
+</html>
